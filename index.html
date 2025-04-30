@@ -1,108 +1,80 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hub de Conteúdos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hub de Conteúdo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
       margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
+      padding: 0;
     }
-    header {
-      background-color: #0d47a1;
-      color: white;
+    .header {
       padding: 20px;
       text-align: center;
+      background: #1c1c1c;
     }
-    .container {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 20px;
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #f4c542;
     }
-    .module-grid {
+    .modules {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: 1fr;
       gap: 20px;
+      padding: 20px;
     }
     .module {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      position: relative;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
     }
-    .module.locked {
-      opacity: 0.6;
-    }
-    .module.locked::after {
-      content: 'Bloqueado';
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #e53935;
-      color: white;
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 12px;
+    .module img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
     }
     .module h3 {
-      margin: 0 0 10px;
+      color: #f4c542;
     }
     .unlock-btn {
-      background-color: #0d47a1;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      text-decoration: none;
       display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #f4c542;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .unlock-btn:hover {
+      background-color: #e4b832;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Meu Hub Digital</h1>
-    <p>Acesse seus módulos exclusivos abaixo</p>
-  </header>
-  <div class="container">
-    <div class="module-grid">
-      <div class="module locked" id="modulo1">
-        <h3>Módulo 1: Introdução</h3>
-        <p>Conteúdo introdutório ao curso</p>
-        <a href="https://pagamentos.kirvano.com/SEU_ID_DE_PRODUTO" target="_blank" class="unlock-btn">Desbloquear</a>
-      </div>
-      <div class="module locked" id="modulo2">
-        <h3>Módulo 2: Estratégia</h3>
-        <p>Planejamento para resultados</p>
-        <a href="https://pagamentos.kirvano.com/SEU_ID_DE_PRODUTO" target="_blank" class="unlock-btn">Desbloquear</a>
-      </div>
-      <div class="module locked" id="modulo3">
-        <h3>Módulo 3: Execução</h3>
-        <p>Colocando tudo em prática</p>
-        <a href="https://pagamentos.kirvano.com/SEU_ID_DE_PRODUTO" target="_blank" class="unlock-btn">Desbloquear</a>
-      </div>
-    </div>
-  </div>
-  <script>
-    // Simulação simples para desbloqueio pós-pagamento (substitua por chamada real à API/Kirvano)
-    function verificarAcesso() {
-      const modulos = document.querySelectorAll('.module');
-      const acessos = JSON.parse(localStorage.getItem('modulosDesbloqueados') || '[]');
-      acessos.forEach(id => {
-        const modulo = document.getElementById(id);
-        if (modulo) {
-          modulo.classList.remove('locked');
-          modulo.querySelector('a').remove();
-          modulo.insertAdjacentHTML('beforeend', '<p><strong>Acesso Liberado!</strong></p>');
-        }
-      });
-    }
 
-    verificarAcesso();
-  </script>
+  <div class="header">
+    <h1>REVENVM: Conteúdo Exclusivo</h1>
+  </div>
+
+  <div class="modules">
+
+    <div class="module locked">
+      <img src="https://raw.githubusercontent.com/niero-design/hub-digital/main/assets/arquivos-sombrios.jpg" alt="Arquivos Sombrios">
+      <h3>Arquivos Sombrios</h3>
+      <p>O conteúdo que você nunca verá num curso aberto.</p>
+      <a href="https://pagamentos.kirvano.com/SEU-LINK-AQUI" target="_blank" class="unlock-btn">Desbloquear</a>
+    </div>
+
+  </div>
+
 </body>
 </html>
